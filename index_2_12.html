@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- 上の文章は画面幅に合わせて,サイズを等倍にできる。スマホ民にやさしいね！-->
+            <title>継承テスト</title>
+          <style>
+            .outer
+            {
+              border: 7px solid red;
+            }
+            .middle
+            {
+              border: 7px solid yellow;
+              margin: 10px; /*外側に空白を作るのだ！*/
+            }
+            .inner
+            {
+              border: 7px solid green;
+              margin: 10px;/*内側にはpaddingを作るのだ！*/
+            }
+          </style>
+    </head>
+    <body>
+      <div class="outer">
+        継承テスト1
+        <div class="middle">
+          継承テスト2
+          <div class="inner">
+            継承テスト3
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
+<!--今日はこれまで、眠すぎませんか・・・？？？？？-->
