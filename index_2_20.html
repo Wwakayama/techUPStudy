@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+  <style>
+    .container {/*親div*/
+      position: relative;/*相対配置*/
+      width: 100%;/*画像の一定化*/
+    }
+ 
+    .overlay {/*上側の画像の設定*/
+      position: absolute;/*絶対配置,親に依存する。*/
+      top: 20px;/*上からの距離を決める*/
+      left: 20px;/*左からの距離を決める*/
+      }
+    .base{/*下の画像の設定*/
+        display: block;
+    }/*src*/
+  </style>
+    </head>
+ <body>
+    <div class="container">
+      <img class="overlay" src="https://techup.tokyo/wp-content/uploads/2021/12/image1.jpg" />
+      <img class="base"src="https://techup.tokyo/wp-content/uploads/2021/12/image2.jpg" />
+  </body>
+</html>
