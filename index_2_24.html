@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>index_2_24.html</title>
+<style>
+    :root{
+        --row-1: 1fr;
+        --row-2: 1fr 1fr;
+        --row-3: 1fr 1fr 1fr;
+
+        --red: red;
+        --aqua: aqua;
+        --yellow: yellow;
+    }
+    .row{
+        display: grid;
+    }
+    .box{
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .one{
+        grid-template-columns: var(--row-1);
+    }
+    .two{
+        grid-template-columns: var(--row-2);
+    }
+    .three{
+        grid-template-columns: var(--row-3);
+    }
+    .red{
+        background-color: var(--red);
+    }
+    .aqua{
+        background-color: var(--aqua);
+    }
+    .yellow{
+        background-color: var(--yellow);
+    }
+</style>
+</head>
+<body>
+
+  <!-- 1行目：1カラム -->
+  <div class="row one">
+    <div class="box red">footer</div>
+  </div>
+
+  <!-- 2行目：2カラム -->
+  <div class="row two">
+    <div class="box aqua">content-1</div>
+    <div class="box yellow">content-2</div>
+  </div>
+
+  <!-- 3行目：3カラム -->
+  <div class="row three">
+    <div class="box red">content3-1</div>
+    <div class="box">content3-2</div>
+    <div class="box aqua">content3-3</div>
+  </div>
+
+  <!-- 4行目：2カラム -->
+  <div class="row two">
+    <div class="box yellow">content4-1</div>
+    <div class="box red">content4-2</div>
+  </div>
+
+  <!-- 5行目：1カラム -->
+  <div class="row one">
+    <div class="box aqua">footer</div>
+  </div>
+
+</body>
+</html>
