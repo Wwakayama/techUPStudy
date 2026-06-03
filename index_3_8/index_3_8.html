@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+  <title>JavaScriptBasic</title>
+</head>
+<body>
+  <p>JavaScript　Basic</p>
+  <script>
+    'use strict'; /*エラーチェック用 */
+    alert('XXを関数で確認します')
+    
+    function fuNumber1 (value){
+      if (value >=4) {
+        console.log('値は４以上です。')
+      }else{
+          console.log('値は４未満です。')
+      }
+    }
+    function fuNumber2(value){
+      if(value >= 10){
+        console.log('値は１０以上です。')
+      }else{
+        console.log('値は１０未満です。')
+      }
+    }
+    fuNumber1(5);
+    fuNumber2(5);
+  </script>
+</body>
+</html>
