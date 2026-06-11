@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+  <title>JavaScriptBasic</title>
+</head>
+<body>
+  <p>JavaScript　Basic</p>
+  <script src="/js/script.js">
+    'use strict'; /*エラーチェック用 */
+        /* 注：暗黙の数値変換 */
+　　/* 文字列を数値演算すると暗黙に数値型に変換されます */    
+    console.log( '1' + 2 ); // "12"
+    console.log( '1' + '2' ); // "12"
+    console.log( "1" + "2" ); // "12"
+    console.log( 1 + 2 ); // 3
+    /*雑談実況
+    　基本足し算の場合、数字+数字は数値として計算されるやで
+    　ただし、+は文字列が混ざると文字列結合になりやすい。
+    　PPAP方式やな！（）
+    　引き算の場合は、両方のオペランドを数値に変換して計算されるやで
+    　なので、引き算は数字と文字列の組み合わせでも数値として計算されるやで
+    */
+    console.log( 2 + '1' ); // "21"
+    console.log( 2 + 2 + '1' ); // "41" 
+    console.log( 6 - '2' ); // 4, 
+    console.log( 6 - "2" ); // 4 
+
+    let a, b, c;// 変数をそれぞれ a, b, c とする
+    a = b = c = 2 + 2;// 2 + 2 の計算結果を a, b, c に代入する
+    console.log( a ); // 4
+    console.log( b ); // 4
+    console.log( c ); // 4
+    console.log( a + b + c ); // 12
+	
+    let n = 2;
+    n = n + 5;
+    console.log(n);// n = 7
+    n = n * 2;
+    console.log(n,"最終結果！");// n = 14
+    
+    var m = 2; //もしくは m = 2;
+    m += 5; // m = 7 (m = m + 5 と同じ)
+    console.log(m);
+    m *= 2; // m = 14 (m = m * 2 と同じ)
+    console.log(m, "結果はあっていますか？");
+
+    /*多分、nで同一になっているから、同一をやめればOKだと思う*/
+
+    /*インクリメント/デクリメント*/  
+    let counter = 2;
+    counter++;  // counter = counter + 1 と同じです インクリメント
+    console.log( counter ); // 3
+
+    let counter2 = 2;
+    ++counter2;  // counter2 = counter2 + 1 と同じです インクリメント
+    console.log( counter2 ); // 3
+
+    let counter3 = 2;
+    counter3--;   // counter3 = counter3 - 1 と同じで　デクリメント
+    console.log( counter3 ); // 1
+    let counter4 = 2;
+    --counter4;   // counter4 = counter4 - 1 と同じで　デクリメント
+    console.log( counter4 ); // 1
+    /* 雑談実況
+    　インクリメントとデクリメントは、変数の値をじわじわと増やしたり減らしたりするのに便利な演算子やで
+    　インクリメントは、変数の値を1増やす演算子で、
+    　デクリメントは、変数の値を1減らす演算子やで、
+    　どっちも前に置くか後ろに置くかで、
+    　評価のタイミングが変わる。
+    　前置きはメテオビーム、
+    　後ろ置きはグロウパンチやな！（誰が分かんねん）
+    */
+  </script>
+</body>
+</html>
