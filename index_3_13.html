@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_3_13 配列とオブジェクトの組み合わせ</title>
+</head>
+    <body>
+        <p>javascript Basics</p>
+        <script>
+            'use strict';
+            /*さいころ作る*/
+            const dice = [1, 2, 3, 4, 5, 6];
+            /*さいころを振る*/
+            const rolled = dice[Math.floor(Math.random() * dice.length)];
+            console.log(rolled);
+
+            /*AI君に聞いたら、こんな感じでもできるって聞いた
+            const rolled = Math.floor(Math.random() * 6) + 1;
+            console.log(rolled);
+            これだと、配列を使わずに、1~6の数字をランダムで出すことができる。
+            ほかにも、
+            function rollDice() {
+                return Math.floor(Math.random() * 6) + 1;
+            }
+            console.log(rollDice());
+            こんな感じでもOKだよ*/
+        </script>
+    </body>
+</html>
