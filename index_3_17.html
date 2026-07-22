@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM総合課題【Todoリスト】</title>
+    </head>
+    <body>
+        <h1>DOM総合課題【Todoリスト】</h1>
+        <div>
+        <label for="input-todo-box">Todoタスクの入力 : </label>
+        <input id="input-todo-box" type="text">
+        <button id="add-button">追加</button>
+        </div>
+ 
+        <h2>現在のTodoリスト</h2>
+        <ul id="todo-list"></ul>
+        <script>
+        'use strict';
+
+        function todoApp() {
+            const todos = []; // 追加されたタスクを格納する配列
+
+            const inputBox = document.getElementById('input-todo-box');
+            const addButton = document.getElementById('add-button');
+            const todoList = document.getElementById('todo-list');
+
+            // 追加ボタンが押されたときの処理
+            addButton.addEventListener('click', () => {
+                const todoText = inputBox.value.trim();
+
+                // 入力ボックスを空っぽにする
+                inputBox.value = '';
+
+                // 入力が空でなければ配列に追加する
+                if (todoText) {
+                    todos.push(todoText);
+                    showTodos();
+                }else{
+                    alert('タスクをお願いするにゃん。');
+                }
+            }); 
+            // Todoリストを画面に表示する関数
+            function showTodos() {
+                // 一度Todoリストの表示を全部消す
+                while (todoList.firstChild) {
+                    todoList.removeChild(todoList.firstChild);
+                }
+
+                // todos配列の中身を1つずつ表示する
+                todos.forEach((todoText, index) => {
+                    const li = document.createElement('li');
+
+                    li.textContent = todoText + ' ';
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = '削除';
+
+                    deleteButton.addEventListener('click', () => {
+                        deleteTodo(index);
+                    });
+
+                    li.appendChild(deleteButton);
+                    todoList.appendChild(li);
+                });
+            }
+
+            // Todoを削除する関数
+            function deleteTodo(index) {
+                todos.splice(index, 1);
+                showTodos();
+            }
+        }
+
+        todoApp();
+        </script>
+    </body>
+</html>

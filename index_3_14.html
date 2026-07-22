@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3_14 いろんなメソッド</title>
+    </head>
+    <body>
+        <script>
+            'use strict'; 
+            window.onload = function () {
+                function showClock(){
+                // 現在の日時を取得 
+                const now = new Date(); 
+                // 時・分・秒を取得 
+                const hour = now.getHours();
+                const minute = now.getMinutes(); 
+                const second = now.getSeconds();
+                 // 2桁表示にする
+                const displayHour = String(hour).padStart(2, '0');
+                const displayMinute = String(minute).padStart(2, '0'); 
+                const displaySecond = String(second).padStart(2, '0');
+                // デジタル時計としてconsoleに表示
+                console.log(displayHour + ':' + displayMinute + ':' + displaySecond); }
+                // まず最初に1回表示
+                showClock();
+                // 1000ミリ秒ごと、つまり1秒ごとに時計を表示
+                setInterval(showClock, 1000);
+            }; 
+        </script>
+    </body>
+</html>

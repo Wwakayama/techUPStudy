@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>J-12　メソッドやクラスをつかう。</title>
+</head>
+<body>
+    <script>
+        "use strict";// メソッドやクラスをつかう。
+        /*
+            課題1
+            静的メソッド、静的プロパティ（static）の確認
+        */
+
+        class Triple {
+            // 静的プロパティ
+            static customName = 'Tripler';
+            static description = 'I triple any number you provide';
+
+            // 静的メソッド
+            static calculate(n = 1) {
+                return n * 3;
+            }
+        }
+        class SquaredTriple extends Triple {
+            // 親クラスTripleのdescriptionを上書き
+            static description = 'I square the triple of any number you provide';
+
+            // 親クラスTripleのcalculateを使って計算する
+            static calculate(n) {
+                return super.calculate(n) * super.calculate(n);
+            }
+        }
+
+        console.log(Triple.description);
+        /*このコードでTripleクラスのdescriptionプロパティを表示 */
+        console.log(Triple.calculate(6));
+        /*このコードでTripleクラスのcalculateメソッドを使って6を3倍した値を表示 */
+        console.log(SquaredTriple.description);
+        /*このコードでSquaredTripleクラスのdescriptionプロパティを表示 */
+        console.log(SquaredTriple.calculate(3));
+        /*このコードでSquaredTripleクラスのcalculateメソッドを使って3を3倍した値の2乗を表示 */
+        console.log(SquaredTriple.customName);
+        /*このコードでSquaredTripleクラスのcustomNameプロパティを表示 */
+        /*
+            課題2
+            constructorのWhoにインスタンスプロパティnameを設定し、
+            初期化時に'tanaka'を渡す
+        */
+        function Who(name) {
+            this.name = name;
+        }
+        Who.prototype.getName = function() {
+            return this.name;
+        };
+        const who = new Who('tanaka');
+        console.log(who.getName());
+    </script>
+</body>
+</html>

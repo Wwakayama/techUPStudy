@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>javascript basics</p>
+        <script>
+            'use strict';
+            var name_array = ['山田','佐藤','内田'];
+            console.log('最初に配列の値を表示します。');
+            console.log(name_array[0]+'さん');
+            console.log(name_array[1]+'さん');
+            console.log(name_array[2]+'さん');
+            //これでデバックコンソールは、name_array[0]さん・・・と表示される。
+            //この場合、name_array[0]は、山田なので、山田さんと表示される。
+            console.log('配列の値を一つ消します。');
+            var shiftExample = name_array.shift();
+            console.log('山田さんを消しました。');
+            console.log('残りを表示します。');
+            console.log(name_array[0]+'さん');
+            //これでデバックコンソールは、name_array[0]さん・・・と表示される。
+            //この場合、name_array[0]は、佐藤なので、佐藤さんと表示される。
+            console.log(name_array[1]+'さん');
+            //これでデバックコンソールは、name_array[1]さん・・・と表示される。
+            //この場合、name_array[1]は、内田なので、内田さんと表示される。
+            console.log('配列の値を一つ消します。');
+            var shiftExample = name_array.shift();
+            console.log('佐藤さんを消しました。');
+            console.log('残りを表示します。');
+            console.log(name_array[0]+'さん');
+            //これでデバックコンソールは、name_array[0]さん・・・と表示される。
+            //この場合、name_array[0]は、内田なので、内田さんと表示される。
+            console.log('配列の値を一つ消します。');
+            var shiftExample = name_array.shift();
+            console.log('内田さんを消しました。');
+            if (name_array.length === 0) {
+            console.log('データがなくなりました。');
+            }
+        </script>
+    </body>
+</html>
