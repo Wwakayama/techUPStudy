@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>円運動のアニメーション</title>
+</head>
+<body>
+    <h2>Canvasでアニメーションを描く</h2>
+
+    <p>
+        図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+    </p>
+
+    <canvas
+        id="canvas"
+        width="500"
+        height="500"
+        style="border: 1px solid black;">
+    </canvas>
+
+    <script>
+        "use strict";
+
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+
+
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        const distanceFromCenter = 150;
+
+
+        const imageSize = 25;
+
+
+        let angleRad = 0;
+
+  
+        const img = new Image();
+        img.src ="https://techup.tokyo/wp-content/uploads/2022/05/gosticon.png";
+
+        function loop() {
+            context.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            angleRad += Math.PI / 720;// 1回転を720フレームで行う
+
+
+            const x =
+                distanceFromCenter * Math.cos(angleRad) + centerX;
+
+            const y =
+                distanceFromCenter * Math.sin(angleRad) + centerY;
+
+            context.drawImage(
+                img,
+                x - imageSize,
+                y - imageSize,
+                imageSize * 2,
+                imageSize * 2
+            );
+            requestAnimationFrame(loop);
+        }
+        img.onload = function () {
+            requestAnimationFrame(loop);
+        };
+    </script>
+</body>
+</html>

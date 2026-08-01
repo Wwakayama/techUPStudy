@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カウントダウンタイマー</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <!-- 時間・分・秒の入力欄 -->
+        <div class="input-area">
+            <label>
+                時間
+                <input id="hour" type="number" min="0" value="0">
+            </label>
+
+            <label>
+                分
+                <input id="minute" type="number" min="0" max="59" value="1"><!-- valueは何だっけ？-->
+            </label>
+
+            <label>
+                秒
+                <input id="second" type="number" min="0" max="59" value="0">
+            </label>
+        </div>
+
+        <!-- 残り時間の表示 -->
+        <p id="timer">00:01:00</p>
+
+        <!-- 操作用のボタン -->
+        <div class="button-area">
+            <button id="start-button" type="button">スタート</button>
+            <button id="stop-button" type="button">ストップ</button>
+            <button id="reset-button" type="button">リセット</button>
+        </div>
+
+        <!-- 0秒になったときのメッセージ -->
+        <p id="message"></p>
+    </main>
+    <script src="js/time.js"></script>
+</body>
+</html>

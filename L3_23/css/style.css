@@ -1,0 +1,156 @@
+/* すべての要素でサイズ計算を分かりやすくする */
+* {
+    box-sizing: border-box;
+}
+
+/* ページ全体のデザイン */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+}
+
+/* タイマー全体を囲む部分 */
+main {
+    width: 90%;
+    max-width: 550px;
+    padding: 40px 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 見出し */
+h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* 時・分・秒の入力欄を横に並べる */
+.input-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 入力欄の説明と入力部分を縦に並べておく。*/
+.input-area label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: bold;
+}
+
+/* 数値入力欄 */
+.input-area input {
+    width: 90px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* 入力欄を選択したときのデザイン */
+.input-area input:focus {
+    border-color: #6c8cff;
+}
+
+/* カウントダウン時間の表示 */
+#timer {
+    margin: 30px 0;
+    padding: 20px 10px;
+    color: #ffffff;
+    background-color: #252a41;
+    border-radius: 12px;
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+    /* 数字によって表示幅が変わるのを防ぐ */
+    font-variant-numeric: tabular-nums;
+}
+
+/* ボタンを横に並べる */
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* すべてのボタンに共通するデザイン */
+button {
+    min-width: 110px;
+    padding: 12px 18px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* ボタンにマウスを重ねたとき */
+button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* ボタンを押した瞬間 */
+button:active {
+    transform: translateY(0);
+}
+
+/* スタートボタン */
+#start-button {
+    background-color: #28a745;
+}
+
+/* ストップボタン */
+#stop-button {
+    background-color: #dc3545;
+}
+
+/* リセットボタン */
+#reset-button {
+    background-color: #6c757d;
+}
+
+/* メッセージ表示欄 */
+#message {
+    min-height: 24px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* 画面幅が小さい場合の調整 */
+@media screen and (max-width: 480px) {
+    main {
+        padding: 30px 15px;
+    }
+
+    .input-area {
+        gap: 8px;
+    }
+
+    .input-area input {
+        width: 75px;
+    }
+
+    #timer {
+        font-size: 38px;
+        letter-spacing: 3px;
+    }
+}

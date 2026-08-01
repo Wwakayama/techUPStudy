@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懐かしいcountdownタイマー</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <!-- 1. 時間を設定する画面 -->
+        <section id="setup-screen" class="screen">
+            <h1>懐かしい作業用カウントダウンタイマー</h1>
+
+            <div class="input-area">
+                <label>
+                    時間
+                    <input id="hour" type="number" min="0" value="0">
+                </label>
+
+                <label>
+                    分
+                    <input id="minute" type="number" min="0" max="59" value="1">
+                </label>
+
+                <label>
+                    秒
+                    <input id="second" type="number" min="0" max="59" value="0">
+                </label>
+            </div>
+
+            <button id="start-button" type="button">
+                スタート
+            </button>
+
+            <!-- 入力内容に問題がある場合に使う -->
+            <p id="input-message"></p>
+        </section>
+
+        <!-- 2. カウントダウン中の画面 -->
+        <section id="running-screen" class="screen" hidden>
+            <p id="timer">00:01:00</p>
+
+            <p id="running-message">えらいっ</p>
+
+            <button id="pause-button" type="button">
+                一時停止
+            </button>
+        </section>
+
+        <!-- 3. カウントダウン終了後の画面 -->
+        <section id="finished-screen" class="screen" hidden>
+            <p id="finished-message">
+                こんな試作品に<br>
+                まじになっちゃって<br>
+                どうするの？
+            </p>
+
+            <p id="ending-mark">完</p>
+
+            <button id="reset-button" type="button">
+                りせっと
+            </button>
+        </section>
+    </main>
+
+    <script src="js/time.js"></script>
+</body>
+</html>
