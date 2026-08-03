@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>index_3_18</title>
+    </head>
+    <body>
+        <style>
+            /* CSSのコードをここに記述します */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+        </style>
+        <!-- HTMLのコードをここに記述します -->
+        <form name="url_myform">
+            <input name="mytext" type="text" value="0">
+            <button id="btn" type="button">ボタン</button>
+        </form>
+        <script>
+            //javascriptのコードをここに記述します
+            "use strict";
+            const btn =document.getElementById("btn");
+            const mytext = document.url_myform.mytext;
+
+            btn.addEventListener("click",function(){
+                mytext.value = Number(mytext.value) + 1;
+            });
+        </script>
+    </body>
+</html>

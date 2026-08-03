@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>html_3_19</title>
+    </head>
+    <body>
+        <p>radを使ってCanvasを描画</p>
+        <canvas id="canvas" width="200" height="200" style="border:1px solid #000000;"></canvas>
+        <script>
+            //javascriptのコードを記述
+            "use strict";
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.arc(100, 100, 50, 0, Math.PI * 1.5);
+            ctx.stroke()
+        </script>
+    </body>
+</html>
+
